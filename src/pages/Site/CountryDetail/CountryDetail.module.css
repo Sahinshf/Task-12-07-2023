@@ -1,0 +1,26 @@
+.app__countryDetail__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+}
+
+.app__countryDetail__information {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__countryDetail__image {
+  width: 34rem;
+  height: 30rem;
+}
+
+.app__countryDetail__image img {
+  object-fit: cover;
+  object-position: center center;
+  height: 100%;
+  width: 100%;
+}
+
+.app__countryDetail__description {
+}

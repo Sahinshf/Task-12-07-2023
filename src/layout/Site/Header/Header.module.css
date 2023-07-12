@@ -1,0 +1,13 @@
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.app__header__darkmode {
+  font-weight: 600;
+}
+
+.app__header__section {
+  padding: 10px 0;
+}

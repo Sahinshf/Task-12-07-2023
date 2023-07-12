@@ -1,0 +1,40 @@
+.app__country__section {
+}
+
+.app__country {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__country__item {
+  margin: 20px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: rgba(247, 243, 243, 0.349);
+}
+.app__country__item__image {
+  width: 288px;
+  height: 160px;
+}
+
+.app__country__item__image img {
+  object-fit: cover;
+  object-position: center center;
+  height: 100%;
+  width: 100%;
+}
+
+.app__country__item__information {
+  display: flex;
+  align-items: baseline;
+}
+
+.app__country__item__information p {
+  padding-left: 5px;
+}
+
+.app__country__item__link {
+  text-decoration: none;
+  color: black;
+}
