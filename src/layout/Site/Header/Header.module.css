@@ -6,6 +6,7 @@
 
 .app__header__darkmode {
   font-weight: 600;
+  cursor: pointer;
 }
 
 .app__header__section {
