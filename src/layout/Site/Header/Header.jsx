@@ -10,7 +10,9 @@ const Header = () => {
         <div>
           <p
             className={Styles.app__header__darkmode}
-            onClick={() => new Darkmode().showWidget}
+            onClick={() => {
+              new Darkmode().toggle();
+            }}
           >
             Dark Mode
           </p>
@@ -19,5 +21,5 @@ const Header = () => {
     </div>
   );
 };
-
+//new Darkmode().showWidget
 export default Header;

@@ -2,25 +2,28 @@ import React, { useEffect, useState } from "react";
 import Styles from "./Country.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Search from "../../../components/Search/Search";
 
 const Country = () => {
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((response) => {
       setData(response.data);
-      // console.log(response.data);
     });
   }, []);
 
   return (
     <div className={`${Styles.Countryapp__country__section} container`}>
       <div className={`${Styles.app__country} row`}>
+        <Search search={search} setSearch={setSearch} />
+
         {data.map((country, index) => {
-          // console.log(country);
           if (
             country.flags.png === undefined ||
-            !Array.isArray(country.capital)
+            !Array.isArray(country.capital) ||
+            !country.name.common.toUpperCase().includes(search.toUpperCase())
           ) {
             return null;
           }
