@@ -3,9 +3,11 @@ import Styles from "./Country.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Search from "../../../components/Search/Search";
+import SelectCountry from "../../../components/SelectCountry/SelectCountry";
 
 const Country = () => {
   const [data, setData] = useState([]);
+  const [select, setSelect] = useState("");
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -17,13 +19,20 @@ const Country = () => {
   return (
     <div className={`${Styles.Countryapp__country__section} container`}>
       <div className={`${Styles.app__country} row`}>
-        <Search search={search} setSearch={setSearch} />
+        <div
+          className="align-items-baseline justify-content-between"
+          style={{ display: "flex", marginTop: "20px" }}
+        >
+          <Search search={search} setSearch={setSearch} />
+          <SelectCountry select={select} setSelect={setSelect} />
+        </div>
 
         {data.map((country, index) => {
           if (
             country.flags.png === undefined ||
             !Array.isArray(country.capital) ||
-            !country.name.common.toUpperCase().includes(search.toUpperCase())
+            !country.name.common.toUpperCase().includes(search.toUpperCase()) ||
+            !country.region.toUpperCase().includes(select.toUpperCase())
           ) {
             return null;
           }
